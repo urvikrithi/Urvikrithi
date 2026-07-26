@@ -3,46 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URVIKRUTHI - Student Society</title>
+<title>URVIKRUTHI | Department of Geo Engineering</title>
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-background:#071A2F;
+background:#0b1f3a;
 color:white;
 }
 
 header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 50px;
-background:rgba(0,0,0,0.4);
-position:fixed;
-width:100%;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
 }
 
 .logo{
 font-size:30px;
 font-weight:bold;
-color:#00C3FF;
+color:#00d4ff;
 }
 
 nav a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 margin-left:25px;
 font-size:18px;
 }
 
 nav a:hover{
-color:#00C3FF;
+color:#00d4ff;
 }
 
 .hero{
@@ -54,60 +56,66 @@ align-items:center;
 text-align:center;
 padding:20px;
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop");
+url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
 background-size:cover;
 background-position:center;
 }
 
 .hero h1{
 font-size:70px;
-color:#00C3FF;
+color:#00d4ff;
 }
 
 .hero h2{
-font-size:30px;
-margin-top:20px;
+margin-top:15px;
+font-size:34px;
 }
 
 .hero p{
-font-size:20px;
 margin-top:20px;
-max-width:700px;
+font-size:20px;
+max-width:800px;
+line-height:1.6;
 }
 
-button{
+.btn{
 margin-top:30px;
 padding:15px 35px;
-font-size:18px;
-background:#00C3FF;
-border:none;
+background:#00d4ff;
+color:white;
+text-decoration:none;
 border-radius:30px;
-cursor:pointer;
+font-size:18px;
 }
 
 section{
-padding:80px 40px;
+padding:80px 30px;
 text-align:center;
 }
 
 .cards{
 display:flex;
 justify-content:center;
-gap:30px;
 flex-wrap:wrap;
+gap:25px;
 margin-top:40px;
 }
 
 .card{
-background:#0F2E52;
-padding:30px;
-width:280px;
+background:#12345b;
+padding:25px;
 border-radius:15px;
+width:280px;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#00d4ff;
 }
 
 footer{
-background:black;
-padding:20px;
+background:#08121f;
+padding:25px;
 text-align:center;
 }
 </style>
@@ -125,6 +133,7 @@ text-align:center;
 <a href="#">About</a>
 <a href="#">Activities</a>
 <a href="#">Gallery</a>
+<a href="#">Team</a>
 <a href="#">Contact</a>
 </nav>
 
@@ -137,33 +146,39 @@ text-align:center;
 <h2>Department of Geo Engineering</h2>
 
 <p>
-Welcome to the official Student Society website.
-Explore our workshops, events, projects, achievements and innovations.
+Welcome to the official Student Society website of the Department of Geo Engineering.
+Explore our technical events, workshops, industrial visits, achievements, innovations,
+and student activities.
 </p>
 
-<button>Explore Activities</button>
+<a href="#" class="btn">Explore Activities</a>
 
 </div>
 
 <section>
 
-<h1>Our Activities</h1>
+<h2>Our Activities</h2>
 
 <div class="cards">
 
 <div class="card">
-<h2>Workshops</h2>
-<p>Hands-on GIS & Remote Sensing Training.</p>
+<h3>📚 Workshops</h3>
+<p>Hands-on technical workshops and skill development programmes.</p>
 </div>
 
 <div class="card">
-<h2>Industrial Visits</h2>
-<p>Learning from industries and research organizations.</p>
+<h3>🌍 Industrial Visits</h3>
+<p>Educational visits to industries, organisations and research centres.</p>
 </div>
 
 <div class="card">
-<h2>Technical Events</h2>
-<p>Hackathons, seminars and competitions.</p>
+<h3>🏆 Technical Events</h3>
+<p>Seminars, hackathons, competitions and student conferences.</p>
+</div>
+
+<div class="card">
+<h3>📸 Gallery</h3>
+<p>Photos and memories from our department activities.</p>
 </div>
 
 </div>
@@ -172,7 +187,11 @@ Explore our workshops, events, projects, achievements and innovations.
 
 <footer>
 
-© 2026 URVIKRUTHI Student Society
+<h3>URVIKRUTHI</h3>
+
+<p>Department of Geo Engineering</p>
+
+<p>© 2026 All Rights Reserved</p>
 
 </footer>
 
