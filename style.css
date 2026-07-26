@@ -27,6 +27,7 @@ header{
     font-size:28px;
     font-weight:bold;
     color:#00d4ff;
+    animation:fadeInDown 0.8s ease;
 }
 
 nav a{
@@ -77,16 +78,17 @@ opacity:1;
 }
 
 }
-}
 
 .overlay h2{
     margin-top:15px;
     font-size:34px;
+    animation:fadeInUp 1.2s ease 0.3s backwards;
 }
 
 .overlay p{
     margin-top:20px;
     font-size:20px;
+    animation:fadeInUp 1.5s ease 0.6s backwards;
 }
 
 .btn{
@@ -97,6 +99,14 @@ opacity:1;
     padding:15px 35px;
     border-radius:30px;
     text-decoration:none;
+    animation:slideInUp 1s ease 0.9s backwards;
+    transition:all 0.3s ease;
+}
+
+.btn:hover{
+    background:#00a8cc;
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0, 212, 255, 0.3);
 }
 
 section{
@@ -107,6 +117,7 @@ section h1{
     text-align:center;
     color:#00d4ff;
     margin-bottom:25px;
+    animation:slideInLeft 0.8s ease;
 }
 
 .cards{
@@ -122,12 +133,20 @@ section h1{
     padding:25px;
     border-radius:15px;
     text-align:center;
+    animation:fadeInUp 0.8s ease;
+    transition:all 0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 30px rgba(0, 212, 255, 0.2);
 }
 
 .card i{
     font-size:40px;
     color:#00d4ff;
     margin-bottom:15px;
+    animation:bounce 2s infinite;
 }
 
 .gallery{
@@ -139,74 +158,154 @@ section h1{
 .gallery img{
     width:100%;
     border-radius:15px;
+    transition:0.5s;
+    animation:imageShow 1.5s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
 }
 
 footer{
     background:#020b18;
     text-align:center;
     padding:20px;
+    animation:fadeIn 1s ease;
+}
+
+/* TEXT ANIMATIONS */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fadeInDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideInLeft{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideInUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes pulse{
+    0%, 100%{
+        opacity:1;
+    }
+    50%{
+        opacity:0.5;
+    }
+}
+
+@keyframes glow{
+    0%, 100%{
+        text-shadow:0 0 5px rgba(0, 212, 255, 0.5);
+    }
+    50%{
+        text-shadow:0 0 20px rgba(0, 212, 255, 1);
+    }
+}
+
+@keyframes typewriter{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes imageShow{
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* UTILITY CLASSES FOR TEXT ANIMATIONS */
+
+.text-pulse{
+    animation:pulse 2s infinite;
+}
+
+.text-glow{
+    animation:glow 2s infinite;
+}
+
+.text-bounce{
+    animation:bounce 2s infinite;
 }
 
 @media(max-width:768px){
 
 header{
-flex-direction:column;
-padding:15px;
+    flex-direction:column;
+    padding:15px;
 }
 
 nav{
-margin-top:10px;
+    margin-top:10px;
 }
 
 .overlay h1{
-font-size:45px;
+    font-size:45px;
 }
 
 .overlay h2{
-font-size:24px;
+    font-size:24px;
 }
-
-}
-.gallery img{
-
-width:100%;
-border-radius:15px;
-
-transition:0.5s;
-
-animation:imageShow 1.5s ease;
-
-}
-
-
-
-.gallery img:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-@keyframes imageShow{
-
-
-from{
-
-opacity:0;
-
-transform:scale(0.8);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
 
 }
