@@ -56,6 +56,27 @@ nav a:hover{
 .overlay h1{
     font-size:70px;
     color:#00d4ff;
+    animation:titleMove 2s ease;
+}
+
+
+@keyframes titleMove{
+
+from{
+
+transform:translateY(-100px);
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+}
 }
 
 .overlay h2{
