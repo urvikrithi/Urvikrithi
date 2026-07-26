@@ -1,10 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URVIKRUTHI - Student Society</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#071A2F;
+color:white;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(0,0,0,0.4);
+position:fixed;
+width:100%;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00C3FF;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-size:18px;
+}
+
+nav a:hover{
+color:#00C3FF;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:70px;
+color:#00C3FF;
+}
+
+.hero h2{
+font-size:30px;
+margin-top:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-top:20px;
+max-width:700px;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+font-size:18px;
+background:#00C3FF;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+section{
+padding:80px 40px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.card{
+background:#0F2E52;
+padding:30px;
+width:280px;
+border-radius:15px;
+}
+
+footer{
+background:black;
+padding:20px;
+text-align:center;
+}
+</style>
+
 </head>
+
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my first GitHub website.</p>
+
+<header>
+
+<div class="logo">URVIKRUTHI</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Activities</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<div class="hero">
+
+<h1>URVIKRUTHI</h1>
+
+<h2>Department of Remote Sensing & GIS</h2>
+
+<p>
+Welcome to the official Student Society website.
+Explore our workshops, events, projects, achievements and innovations.
+</p>
+
+<button>Explore Activities</button>
+
+</div>
+
+<section>
+
+<h1>Our Activities</h1>
+
+<div class="cards">
+
+<div class="card">
+<h2>Workshops</h2>
+<p>Hands-on GIS & Remote Sensing Training.</p>
+</div>
+
+<div class="card">
+<h2>Industrial Visits</h2>
+<p>Learning from industries and research organizations.</p>
+</div>
+
+<div class="card">
+<h2>Technical Events</h2>
+<p>Hackathons, seminars and competitions.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 URVIKRUTHI Student Society
+
+</footer>
+
 </body>
 </html>
