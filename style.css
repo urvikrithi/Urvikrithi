@@ -54,8 +54,8 @@ body::after {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(0deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%, transparent 77%, transparent),
-        linear-gradient(90deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%, transparent 77%, transparent);
+        linear-gradient(0deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%,[...]
+        linear-gradient(90deg, transparent 24%, rgba(0, 212, 255, 0.05) 25%, rgba(0, 212, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 212, 255, 0.05) 75%, rgba(0, 212, 255, 0.05) 76%[...]
     background-size: 50px 50px;
     animation: gridMove 20s linear infinite;
     pointer-events: none;
@@ -147,21 +147,46 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* HERO / BACKGROUND (updated to use a dedicated pseudo-element for a professional image + subtle zoom) */
 .hero{
     height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-    url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1800&q=80");
-    background-size:cover;
-    background-position:center;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     position: relative;
     overflow: hidden;
+    /* gentle dark overlay to improve text contrast */
+    background: linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45));
 }
 
+/* default professional background image; you can replace this URL with a local asset like 'assets/images/bg-professional.jpg' */
+:root{
+    --hero-bg-url: url("https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2000&q=80&fm=jpg");
+}
+
+.hero::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: var(--hero-bg-url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: center center;
+    filter: brightness(0.68) saturate(0.95);
+    will-change: transform;
+    animation: bgZoom 30s ease-in-out infinite;
+}
+
+@keyframes bgZoom{
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+/* keep the existing subtle radial glow above the image (preserves current design) */
 .hero::before {
     content: '';
     position: absolute;
@@ -183,6 +208,7 @@ nav a:hover::after {
     }
 }
 
+/* overlay content (text) stays above imagery */
 .overlay {
     position: relative;
     z-index: 2;
@@ -792,4 +818,11 @@ nav a {
     width: 100%;
 }
 
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero::after { animation: none !important; }
+    body::before, body::after { animation: none !important; }
+    .btn, nav a { transition: none !important; }
 }
